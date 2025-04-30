@@ -4,6 +4,7 @@
 package main;
 
 import controlador.Controller;
+import modelo.UsuariosModelo;
 
 /**
  *
@@ -16,6 +17,9 @@ public class Main {
         Esta clase la uso para instanciar el controlador desde el instanciare la
         ventana principal, así como las internal frames dentro de ella.
          */
-        Controller controlador = new Controller();
+        
+        UsuariosModelo usuariosModelo = new UsuariosModelo();
+        Controller controlador = new Controller(usuariosModelo);
+        
     }
 }

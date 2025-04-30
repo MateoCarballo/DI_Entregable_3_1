@@ -4,17 +4,29 @@
  */
 package vista;
 
+import controlador.Controller;
+import java.awt.event.ActionListener;
+import javax.swing.JTextField;
+
 /**
  *
  * @author mateo
  */
 public class VentanaRegistro extends javax.swing.JInternalFrame {
 
+    Controller controlador;
     /**
      * Creates new form VentanaRegistro
      */
-    public VentanaRegistro() {
+    public VentanaRegistro(Controller controlador) {
+        this.controlador = controlador;
         initComponents();
+        registrarEscuchador();
+    }
+    
+    private void registrarEscuchador() {
+        jButtonRegistrar.addActionListener((ActionListener) this.controlador);
+        jButtonRegistrar.setActionCommand("Boton Registro Usuario Pulsado");
     }
 
     /**
@@ -99,6 +111,14 @@ public class VentanaRegistro extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonRegistrarActionPerformed
 
+    public JTextField getjTextFieldClaveUsuario() {
+        return jTextFieldClaveUsuario;
+    }
+
+    public JTextField getjTextFieldnombreUsuario() {
+        return jTextFieldnombreUsuario;
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonRegistrar;
@@ -108,4 +128,5 @@ public class VentanaRegistro extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTextFieldClaveUsuario;
     private javax.swing.JTextField jTextFieldnombreUsuario;
     // End of variables declaration//GEN-END:variables
+
 }

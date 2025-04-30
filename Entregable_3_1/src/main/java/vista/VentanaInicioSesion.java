@@ -4,7 +4,9 @@
  */
 package vista;
 
-import com.sun.java.accessibility.util.AWTEventMonitor;
+import controlador.Controller;
+import java.awt.event.ActionListener;
+import javax.swing.JTextField;
 
 /**
  *
@@ -12,13 +14,16 @@ import com.sun.java.accessibility.util.AWTEventMonitor;
  */
 public class VentanaInicioSesion extends javax.swing.JInternalFrame {
 
+    private final Controller controlador;
+
     /**
      * Creates new form VentanaInicioSesion
      */
-    public VentanaInicioSesion() {
+    public VentanaInicioSesion(Controller c) {
+        this.controlador = c;
         initComponents();
+        registrarEscuchador();
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -109,5 +114,20 @@ public class VentanaInicioSesion extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTextFieldClaveUsuario;
     private javax.swing.JTextField jTextFieldnombreUsuario;
     // End of variables declaration//GEN-END:variables
+
+    private void registrarEscuchador() {
+        jButtonInicioSesion.addActionListener((ActionListener) this.controlador);
+        jButtonInicioSesion.setActionCommand("Boton Inicio Sesion Pulsado");
+    }
+
+    public JTextField getjTextFieldClaveUsuario() {
+        return jTextFieldClaveUsuario;
+    }
+
+    public JTextField getjTextFieldnombreUsuario() {
+        return jTextFieldnombreUsuario;
+    }
+    
+    
 
 }

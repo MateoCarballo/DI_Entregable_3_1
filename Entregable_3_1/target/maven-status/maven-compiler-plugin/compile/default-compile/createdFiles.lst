@@ -3,6 +3,7 @@ modelo\GameModel.class
 vista\VentanaPrincipal$1.class
 main\Main.class
 vista\VentanaTablaRecords.class
+modelo\UsuariosModelo.class
 vista\VentanaRegistro.class
 vista\VentanaInicioSesion$1.class
 controlador\Controller.class
@@ -13,6 +14,8 @@ controlador\JuegoController.class
 modelo\Carta.class
 controlador\Controller$1.class
 controlador\JuegoController$GameState.class
+modelo\Partida.class
 vista\VentanaCreditos.class
 vista\VentanaInicioSesion.class
+modelo\Usuario.class
 vista\VentanaJuego.class
