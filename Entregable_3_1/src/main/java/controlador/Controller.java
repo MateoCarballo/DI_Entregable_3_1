@@ -9,8 +9,12 @@ import vista.VentanaCreditos;
 import vista.VentanaPrincipal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
 import javax.swing.event.InternalFrameEvent;
 import javax.swing.event.InternalFrameListener;
 import modelo.Usuario;
@@ -70,7 +74,7 @@ public class Controller implements ActionListener {
             iniciarSesion();
             return;
         }
-        
+
         if (comando.equals("Boton Registro Usuario Pulsado")) {
             registrarUsuario();
             return;
@@ -97,10 +101,6 @@ public class Controller implements ActionListener {
                 abrirVentanaCreditos();
             case "Primeros pasos" ->
                 abrirVentanaAyuda();
-            case "Boton Inicio Sesion Pulsado" ->
-                iniciarSesion();
-            case "Boton Registro Usuario Pulsado" ->
-                registrarUsuario();
             default ->
                 System.out.println("Acción desconocida: " + comando);
         }
@@ -198,6 +198,24 @@ public class Controller implements ActionListener {
             JOptionPane.showMessageDialog(null, "No exiten jugadores con estos credenciales.");
         } else {
             player = instanciaJugador;
+            ventanaInicioSesion.dispose();
+            limpiarReferenciasVentanas();
+            mostraMensaje("Inicio de sesion completo para el usuario, " + player.getNombre());
+            abrirVentanaJuego();
+        }
+    }
+
+    private void atajoIniciarSesion(String nombreUsuario, String clave) {
+        System.out.println("Entrado en metodo iniciar sesion");
+        Usuario instanciaJugador = usuariosModelo.iniciarSesion(nombreUsuario, clave);
+
+        if (instanciaJugador == null) {
+            JOptionPane.showMessageDialog(null, "No exiten jugadores con estos credenciales.");
+        } else {
+            player = instanciaJugador;
+            ventanaInicioSesion.dispose();
+            limpiarReferenciasVentanas();
+            mostraMensaje("Inicio de sesion completo para el usuario, " + player.getNombre());
         }
     }
 
@@ -207,8 +225,16 @@ public class Controller implements ActionListener {
         if (usuariosModelo.existeNombreParaRegistrar(posibleNombre)) {
             JOptionPane.showMessageDialog(null, "Este nombre ya esta registrado intentalo con otro");
         } else {
-            System.out.println("Llegamos a registrar el user");
             usuariosModelo.registrarUsuario(posibleNombre, posibleClave);
+            atajoIniciarSesion(posibleNombre, posibleClave);
+            mostraMensaje("El usuario " + posibleNombre + " se ha registrado correctamente.");
         }
+    }
+
+    private void mostraMensaje(String mensaje) {
+        JOptionPane optionPane = new JOptionPane(mensaje, JOptionPane.INFORMATION_MESSAGE);
+        JDialog dialog = optionPane.createDialog("Aviso");
+        dialog.setModal(false);
+        dialog.setVisible(true);
     }
 }

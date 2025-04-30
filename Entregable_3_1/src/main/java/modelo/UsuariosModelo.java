@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package modelo;
 
 import java.io.File;
@@ -12,10 +8,12 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class UsuariosModelo {
 
-    private static final String ARCHIVO_USUARIOS = "Usuarios.csv";
+    private static final String ARCHIVO_USUARIOS = "src//main//persistencia//Usuarios.dat";
     private final List<Usuario> usuarios;
 
     public UsuariosModelo() {
@@ -55,6 +53,11 @@ public class UsuariosModelo {
     private List<Usuario> cargarUsuarios() {
         File archivo = new File(ARCHIVO_USUARIOS);
         if (!archivo.exists()) {
+            try {
+                archivo.createNewFile();
+            } catch (IOException ex) {
+                Logger.getLogger(UsuariosModelo.class.getName()).log(Level.SEVERE, null, ex);
+            }
             return new ArrayList<>();
         }
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(archivo))) {
