@@ -31,10 +31,10 @@
               </Group>
               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jLabelInicioSesion" max="32767" attributes="0"/>
+                  <Component id="jLabelInicioSesion" pref="179" max="32767" attributes="0"/>
                   <Component id="jButtonInicioSesion" alignment="1" max="32767" attributes="0"/>
                   <Component id="jTextFieldnombreUsuario" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jTextFieldClaveUsuario" alignment="0" min="-2" pref="179" max="-2" attributes="0"/>
+                  <Component id="jTextFieldClaveUsuario" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="105" max="32767" attributes="0"/>
           </Group>
@@ -51,9 +51,9 @@
                   <Component id="jLabelUser" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jTextFieldClaveUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabelPassword" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jLabelPassword" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldClaveUsuario" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jButtonInicioSesion" min="-2" max="-2" attributes="0"/>
@@ -66,11 +66,6 @@
     <Component class="javax.swing.JTextField" name="jTextFieldnombreUsuario">
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value="jTextFiel del nombre del usuario"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldClaveUsuario">
-      <Properties>
-        <Property name="toolTipText" type="java.lang.String" value="jTextField de la clave del usuario"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonInicioSesion">
@@ -99,6 +94,8 @@
         <Property name="text" type="java.lang.String" value="Inicio Sesion"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="jTextFieldClaveUsuario">
     </Component>
   </SubComponents>
 </Form>

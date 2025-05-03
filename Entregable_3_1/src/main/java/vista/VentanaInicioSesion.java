@@ -35,18 +35,16 @@ public class VentanaInicioSesion extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jTextFieldnombreUsuario = new javax.swing.JTextField();
-        jTextFieldClaveUsuario = new javax.swing.JTextField();
         jButtonInicioSesion = new javax.swing.JButton();
         jLabelUser = new javax.swing.JLabel();
         jLabelPassword = new javax.swing.JLabel();
         jLabelInicioSesion = new javax.swing.JLabel();
+        jTextFieldClaveUsuario = new javax.swing.JPasswordField();
 
         setClosable(true);
         setTitle("Inicio Sesion");
 
         jTextFieldnombreUsuario.setToolTipText("jTextFiel del nombre del usuario");
-
-        jTextFieldClaveUsuario.setToolTipText("jTextField de la clave del usuario");
 
         jButtonInicioSesion.setText("Entrar");
         jButtonInicioSesion.addActionListener(new java.awt.event.ActionListener() {
@@ -74,10 +72,10 @@ public class VentanaInicioSesion extends javax.swing.JInternalFrame {
                     .addComponent(jLabelPassword))
                 .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabelInicioSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelInicioSesion, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
                     .addComponent(jButtonInicioSesion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTextFieldnombreUsuario)
-                    .addComponent(jTextFieldClaveUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldClaveUsuario))
                 .addContainerGap(105, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -90,9 +88,9 @@ public class VentanaInicioSesion extends javax.swing.JInternalFrame {
                     .addComponent(jTextFieldnombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelUser))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldClaveUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelPassword))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabelPassword)
+                    .addComponent(jTextFieldClaveUsuario))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonInicioSesion)
                 .addContainerGap(129, Short.MAX_VALUE))
@@ -111,7 +109,7 @@ public class VentanaInicioSesion extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabelInicioSesion;
     private javax.swing.JLabel jLabelPassword;
     private javax.swing.JLabel jLabelUser;
-    private javax.swing.JTextField jTextFieldClaveUsuario;
+    private javax.swing.JPasswordField jTextFieldClaveUsuario;
     private javax.swing.JTextField jTextFieldnombreUsuario;
     // End of variables declaration//GEN-END:variables
 

@@ -22,6 +22,7 @@ public class VentanaRegistro extends javax.swing.JInternalFrame {
         this.controlador = controlador;
         initComponents();
         registrarEscuchador();
+        getRootPane().setDefaultButton(jButtonRegistrar);
     }
     
     private void registrarEscuchador() {
@@ -39,19 +40,18 @@ public class VentanaRegistro extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jTextFieldnombreUsuario = new javax.swing.JTextField();
-        jTextFieldClaveUsuario = new javax.swing.JTextField();
         jButtonRegistrar = new javax.swing.JButton();
         jLabelUser = new javax.swing.JLabel();
         jLabelPassword = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jTextFieldClaveUsuario = new javax.swing.JPasswordField();
 
         setClosable(true);
         setTitle("Registro");
         setToolTipText("Ventana registro");
+        setPreferredSize(new java.awt.Dimension(400, 200));
 
         jTextFieldnombreUsuario.setToolTipText("jTextFiel del nombre del usuario");
-
-        jTextFieldClaveUsuario.setToolTipText("jTextField de la clave del usuario");
 
         jButtonRegistrar.setText("Registrar");
         jButtonRegistrar.addActionListener(new java.awt.event.ActionListener() {
@@ -79,11 +79,10 @@ public class VentanaRegistro extends javax.swing.JInternalFrame {
                     .addComponent(jLabelPassword))
                 .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jButtonRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextFieldnombreUsuario, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jTextFieldClaveUsuario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
+                    .addComponent(jButtonRegistrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
+                    .addComponent(jTextFieldnombreUsuario)
+                    .addComponent(jTextFieldClaveUsuario))
                 .addContainerGap(105, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -96,12 +95,12 @@ public class VentanaRegistro extends javax.swing.JInternalFrame {
                     .addComponent(jTextFieldnombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelUser))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldClaveUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelPassword))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelPassword)
+                    .addComponent(jTextFieldClaveUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonRegistrar)
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         pack();
@@ -125,7 +124,7 @@ public class VentanaRegistro extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelPassword;
     private javax.swing.JLabel jLabelUser;
-    private javax.swing.JTextField jTextFieldClaveUsuario;
+    private javax.swing.JPasswordField jTextFieldClaveUsuario;
     private javax.swing.JTextField jTextFieldnombreUsuario;
     // End of variables declaration//GEN-END:variables
 
