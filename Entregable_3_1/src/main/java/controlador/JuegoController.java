@@ -13,16 +13,20 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
+import modelo.UsuariosModelo;
 
 public class JuegoController {
 
     private final VentanaJuego vista;
     private Timer mostrarCartasTimer;
     private Timer voltearCartasTimer;
+    private Timer cronometroTimer;
     private final GameState estadoJuego;
     private final Map<JButton, Integer> posicionesCartas;
     private ImageIcon interrogacionIcon;
     private JButton[] cartasSeleccionadas = new JButton[2];
+
+    private UsuariosModelo usersModel;
 
     // Clase interna para manejar el estado del juego
     private class GameState {
@@ -78,8 +82,9 @@ public class JuegoController {
         }
     }
 
-    public JuegoController(VentanaJuego vista) {
+    public JuegoController(VentanaJuego vista, UsuariosModelo usersModel) {
         this.vista = vista;
+        this.usersModel = usersModel;
         this.estadoJuego = new GameState();
         this.posicionesCartas = new HashMap<>();
         configurarJuego();
@@ -142,13 +147,15 @@ public class JuegoController {
         });
         mostrarCartasTimer.setRepeats(false);
         mostrarCartasTimer.start();
+        iniciarCronometro();
     }
 
     private class CartaClickListener implements ActionListener {
+
         @Override
         public void actionPerformed(ActionEvent e) {
             JButton cartaClickeada = (JButton) e.getSource();
-            
+
             if (cartasSeleccionadas[0] == null) {
                 cartasSeleccionadas[0] = cartaClickeada;
                 mostrarImagenCarta(cartaClickeada);
@@ -158,7 +165,7 @@ public class JuegoController {
                 verificarPareja();
             }
         }
-        
+
         private void mostrarImagenCarta(JButton carta) {
             int posicion = posicionesCartas.get(carta);
             String nombreImagen = estadoJuego.getImagenEnPosicion(posicion);
@@ -193,6 +200,8 @@ public class JuegoController {
             cartasSeleccionadas[1] = null;
 
             if (estadoJuego.juegoCompletado()) {
+                cronometroTimer.stop();
+                usersModel.agregarNuevaPartida(vista.getjLabelJugadorContenido().getText(), estadoJuego.getTiempoTranscurrido());
                 vista.mostrarMensajeFin("¡Ganaste! Tiempo: "
                         + estadoJuego.getTiempoTranscurrido() + " segundos");
             }
@@ -225,4 +234,24 @@ public class JuegoController {
 
         vista.getBotonComenzar().setEnabled(true);
     }
+
+    private void iniciarCronometro() {
+        if (cronometroTimer != null) {
+            cronometroTimer.stop();
+        }
+
+        cronometroTimer = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                long segundos = estadoJuego.getTiempoTranscurrido();
+                long hrs = segundos / 3600;
+                long mins = (segundos % 3600) / 60;
+                long segs = segundos % 60;
+                String tiempoFormateado = String.format("%02d:%02d:%02d", hrs, mins, segs);
+                vista.getjLabelTiempoJugado().setText(tiempoFormateado);
+            }
+        });
+        cronometroTimer.start();
+    }
+
 }

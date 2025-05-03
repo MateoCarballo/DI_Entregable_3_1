@@ -25,7 +25,20 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="btnComenzar" min="-2" pref="167" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="btnComenzar" min="-2" pref="167" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelJugador" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelTiempo" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelTiempoJugado" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelJugadorContenido" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
@@ -91,11 +104,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="181" max="-2" attributes="0"/>
-                      <Component id="btnComenzar" min="-2" pref="47" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jButtonCarta1" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
@@ -105,34 +114,48 @@
                           <Component id="jButtonCarta5" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
                           <Component id="jButtonCarta6" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
                       </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="btnComenzar" min="-2" pref="47" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButtonCarta7" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="jButtonCarta8" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="jButtonCarta9" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="jButtonCarta10" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="jButtonCarta11" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="jButtonCarta12" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="jLabelJugador" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelJugadorContenido" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButtonCarta13" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="jButtonCarta14" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="jButtonCarta15" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="jButtonCarta16" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="jButtonCarta17" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="jButtonCarta18" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButtonCarta19" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="jButtonCarta20" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="jButtonCarta21" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="jButtonCarta22" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="jButtonCarta23" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="jButtonCarta24" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="jLabelTiempo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelTiempoJugado" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jButtonCarta7" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
+                  <Component id="jButtonCarta8" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
+                  <Component id="jButtonCarta9" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
+                  <Component id="jButtonCarta10" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
+                  <Component id="jButtonCarta11" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
+                  <Component id="jButtonCarta12" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jButtonCarta13" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
+                  <Component id="jButtonCarta14" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
+                  <Component id="jButtonCarta15" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
+                  <Component id="jButtonCarta16" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
+                  <Component id="jButtonCarta17" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
+                  <Component id="jButtonCarta18" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jButtonCarta19" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
+                  <Component id="jButtonCarta20" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
+                  <Component id="jButtonCarta21" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
+                  <Component id="jButtonCarta22" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
+                  <Component id="jButtonCarta23" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
+                  <Component id="jButtonCarta24" alignment="3" min="-2" pref="150" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -192,6 +215,20 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Comenzar"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelJugador">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Jugador: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelJugadorContenido">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelTiempo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tiempo: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelTiempoJugado">
     </Component>
   </SubComponents>
 </Form>

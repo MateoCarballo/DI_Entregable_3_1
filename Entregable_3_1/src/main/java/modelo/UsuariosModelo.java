@@ -18,6 +18,8 @@ public class UsuariosModelo {
 
     public UsuariosModelo() {
         usuarios = cargarUsuarios();
+        //Metodo para ver el contenido del archivo y saber si la lista tiene las partidas o no 
+        mostrarPartidasConsola();
     }
 
     public void registrarUsuario(String nombre, String contrasena) {
@@ -33,7 +35,7 @@ public class UsuariosModelo {
         }
         return null;
     }
-    
+
     public boolean existeNombreParaRegistrar(String nombre) {
         for (Usuario u : usuarios) {
             if (u.getNombre().equals(nombre)) {
@@ -64,6 +66,29 @@ public class UsuariosModelo {
             return (List<Usuario>) in.readObject();
         } catch (IOException | ClassNotFoundException e) {
             return new ArrayList<>();
+        }
+    }
+
+    public void agregarNuevaPartida(String userName, long tiempoPartida) {
+        for (Usuario u : usuarios) {
+            if (u.getNombre().equals(userName)) {
+                u.agregarPartida(new Partida(u.getNombre(), tiempoPartida));
+            }
+        }
+        guardarUsuarios();
+    }
+
+    private void mostrarPartidasConsola() {
+        for (Usuario usuario : usuarios) {
+            System.out.println("Usuario: " + usuario.getNombre());
+            System.out.println("Partidas:");
+            List<Partida> partidas = usuario.getPartidas();
+            for (Partida partida : partidas) {
+                System.out.println("  Fecha: " + partida.getFecha());
+                System.out.println("  Tiempo: " + partida.getTiempoEnSegundos() + " segundos");
+            }
+
+            System.out.println();  // Salto de línea entre usuarios
         }
     }
 }

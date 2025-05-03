@@ -6,10 +6,10 @@ import java.time.LocalDateTime;
 
 public class Partida implements Serializable {
     private final LocalDateTime fecha;
-    private final int tiempoEnSegundos;
+    private final long tiempoEnSegundos;
     private final String jugador;
 
-    public Partida(String jugador, int tiempoEnSegundos) {
+    public Partida(String jugador, long tiempoEnSegundos) {
         this.fecha = LocalDateTime.now();
         this.tiempoEnSegundos = tiempoEnSegundos;
         this.jugador = jugador;
@@ -23,7 +23,7 @@ public class Partida implements Serializable {
         return fecha;
     }
 
-    public int getTiempoEnSegundos() {
+    public long getTiempoEnSegundos() {
         return tiempoEnSegundos;
     }
 }

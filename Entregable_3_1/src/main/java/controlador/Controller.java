@@ -9,12 +9,9 @@ import vista.VentanaCreditos;
 import vista.VentanaPrincipal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.Timer;
 import javax.swing.event.InternalFrameEvent;
 import javax.swing.event.InternalFrameListener;
 import modelo.Usuario;
@@ -38,9 +35,6 @@ public class Controller implements ActionListener {
     //Comentario para commit 
     UsuariosModelo usuariosModelo;
 
-    /*
-    Variables necesarias para el registro de la partida
-     */
     Usuario player = null;
 
     public Controller(UsuariosModelo uModelo) {
@@ -121,7 +115,12 @@ public class Controller implements ActionListener {
 
     private void abrirVentanaJuego() {
         ventanaJ = new VentanaJuego();
-        new JuegoController(ventanaJ); // Pasamos la ventana al controlador específico
+        if (player != null){
+            ventanaJ.setjLabelJugadorContenido(player.getNombre());
+        } else {
+            ventanaJ.setjLabelJugadorContenido("Sin registrar");
+        }
+        new JuegoController(ventanaJ, usuariosModelo); // Pasamos la ventana al controlador específico
         agregarVentana(ventanaJ);
     }
 
