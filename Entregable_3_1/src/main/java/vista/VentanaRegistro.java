@@ -22,6 +22,8 @@ public class VentanaRegistro extends javax.swing.JInternalFrame {
         this.controlador = controlador;
         initComponents();
         registrarEscuchador();
+        
+        //Esta linea hace que tenga seleccionado el boton entonces cuando pulsas enter es como si clickaras en el
         getRootPane().setDefaultButton(jButtonRegistrar);
     }
     

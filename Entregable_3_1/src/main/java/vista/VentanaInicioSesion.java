@@ -23,6 +23,8 @@ public class VentanaInicioSesion extends javax.swing.JInternalFrame {
         this.controlador = c;
         initComponents();
         registrarEscuchador();
+        //Esta linea hace que tenga seleccionado el boton entonces cuando pulsas enter es como si clickaras en el
+        getRootPane().setDefaultButton(jButtonInicioSesion);
     }
 
     /**
@@ -93,7 +95,7 @@ public class VentanaInicioSesion extends javax.swing.JInternalFrame {
                     .addComponent(jTextFieldClaveUsuario))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonInicioSesion)
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         pack();
