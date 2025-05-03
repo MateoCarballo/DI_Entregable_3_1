@@ -4,6 +4,8 @@
  */
 package vista;
 
+import javax.swing.JTable;
+
 /**
  *
  * @author mateo
@@ -27,16 +29,16 @@ public class VentanaTablaRecords extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableRecordPersonal = new javax.swing.JTable();
         jLabelPersonales = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jTableRecordGeneral = new javax.swing.JTable();
         jLabelGenerales1 = new javax.swing.JLabel();
 
         setClosable(true);
         setTitle("Tabla de records");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableRecordPersonal.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -44,19 +46,13 @@ public class VentanaTablaRecords extends javax.swing.JInternalFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jTableRecordPersonal.setToolTipText("Tabla records  personales");
+        jScrollPane1.setViewportView(jTableRecordPersonal);
 
         jLabelPersonales.setText("Mejores tiempos personales");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane2.setViewportView(jTable2);
+        jTableRecordGeneral.setToolTipText("Tabla records generales");
+        jScrollPane2.setViewportView(jTableRecordGeneral);
 
         jLabelGenerales1.setText("Mejores tiempos generales");
 
@@ -99,7 +95,15 @@ public class VentanaTablaRecords extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabelPersonales;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTableRecordGeneral;
+    private javax.swing.JTable jTableRecordPersonal;
     // End of variables declaration//GEN-END:variables
+
+    public JTable getjTableRecordGeneral() {
+        return jTableRecordGeneral;
+    }
+
+    public JTable getjTableRecordPersonal() {
+        return jTableRecordPersonal;
+    }
 }

@@ -126,6 +126,10 @@ public class Controller implements ActionListener {
 
     private void abrirVentanaRecords() {
         ventanaRecords = new VentanaTablaRecords();
+        ventanaRecords.getjTableRecordGeneral().setModel(usuariosModelo.obtenerModeloTablaGeneral());
+        if(player != null){
+            ventanaRecords.getjTableRecordPersonal().setModel(usuariosModelo.obtenerModeloTablaJugador(player.getNombre()));
+        }
         agregarVentana(ventanaRecords);
     }
 
