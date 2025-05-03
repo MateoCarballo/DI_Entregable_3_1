@@ -213,9 +213,10 @@ public class Controller implements ActionListener {
             JOptionPane.showMessageDialog(null, "No exiten jugadores con estos credenciales.");
         } else {
             player = instanciaJugador;
-            ventanaInicioSesion.dispose();
+            ventanaRegistro.dispose();
             limpiarReferenciasVentanas();
             mostraMensaje("Inicio de sesion completo para el usuario, " + player.getNombre());
+            abrirVentanaJuego();
         }
     }
 
